@@ -2,7 +2,7 @@ namespace CharacterController
 {
     public enum StateName
     {
-        Move = 100,
+        Move = 0,
         DODGE,
         ATTACK,
         SKILL,

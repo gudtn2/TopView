@@ -20,12 +20,24 @@ public class PlayerController : MonoBehaviour
     {
         player = GetComponent<Player>();
 
-        
+        moveState = player.stateMachine.GetState(StateName.Move) as MoveState;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void OnMoveInput(InputAction.CallbackContext context)
+    {
+        if (player.IsDied)
+        {
+            inputDir = Vector3.zero;
+            return;
+        }
+
+        Vector2 input = context.ReadValue<Vector2>();
+        inputDir = new Vector3(input.x, 0f, input.y);
     }
 }

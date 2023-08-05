@@ -6,7 +6,7 @@ using CharacterController;
 public class Player : MonoBehaviour
 {
     public bool IsDied { get; private set; } = false;
-    public static Player Instance { get { return Instance; } }
+    public static Player Instance { get { return instance; } }
     public PlayerController Controller { get; private set; }
     public Rigidbody rigidBody { get; private set; }
     public Animator animator { get; private set; }
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public Color originalMaterialColor { get; private set; }
     public StateMachine stateMachine { get; private set; }
     //public AnimationEventHandler _AnimationEventHandler { get; private set; }
-    public AudioSource audioSource { get; private set; }
+    //public AudioSource audioSource { get; private set; }
 
     [SerializeField]
     public Transform shotGenerator;
