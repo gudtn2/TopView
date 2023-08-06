@@ -27,7 +27,7 @@ namespace CharacterController
         {
             float moveSpeed = Player.Instance.Speed;
             Player.Instance.animator.SetFloat(_animIDSpeed, Player.Instance.Controller.inputDir.magnitude * moveSpeed);
-            Player.Instance.transform.position += Player.Instance.Controller.moveDir.normalized * Time.deltaTime * moveSpeed;
+            Player.Instance.transform.position += Player.Instance.Controller.inputDir.normalized * Time.deltaTime * moveSpeed;
         }
 
         public override void OnExitState()
