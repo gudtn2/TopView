@@ -31,10 +31,14 @@ public class Player : MonoBehaviour
     #region Ω∫≈»
     [SerializeField] protected float maxHP;
     [SerializeField] protected float currentHP;
+
+    public Weapon equipWeapon;
     public float Speed { get; set; } = 3.0f;
 
+    public float fireDelay { get; set; } = 0.1f;
     public float MaxHP { get { return maxHP; } }
     public float CurrentHP { get { return currentHP; } }
+    public int ammo;
     #endregion
 
     private void Awake()
@@ -76,5 +80,6 @@ public class Player : MonoBehaviour
     private void InitStateMachine()
     {
         stateMachine = new StateMachine(StateName.Move, new MoveState());
+        stateMachine.AddState(StateName.ATTACK, new AttackState());
     }
 }
